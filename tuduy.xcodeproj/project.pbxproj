@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A52DF309AC5E9B11DF2BBA96 /* Pods_tuduy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0101C738D6158DB8E944AFEE /* Pods_tuduy.framework */; };
 		E1390DFE2013134800FA20DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1390DFD2013134800FA20DE /* AppDelegate.swift */; };
 		E1390E002013134800FA20DE /* TodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1390DFF2013134800FA20DE /* TodListViewController.swift */; };
 		E1390E032013134800FA20DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1390E012013134800FA20DE /* Main.storyboard */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0101C738D6158DB8E944AFEE /* Pods_tuduy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tuduy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A270E1563E6FF88FA1F68E8 /* Pods-tuduy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tuduy.release.xcconfig"; path = "Pods/Target Support Files/Pods-tuduy/Pods-tuduy.release.xcconfig"; sourceTree = "<group>"; };
+		8CA0B2D0F34CA7FA4B9CC26A /* Pods-tuduy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tuduy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tuduy/Pods-tuduy.debug.xcconfig"; sourceTree = "<group>"; };
 		E1390DFA2013134800FA20DE /* tuduy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tuduy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1390DFD2013134800FA20DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1390DFF2013134800FA20DE /* TodListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodListViewController.swift; sourceTree = "<group>"; };
@@ -33,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52DF309AC5E9B11DF2BBA96 /* Pods_tuduy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3CA237DAB8B6CF001330373 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CA0B2D0F34CA7FA4B9CC26A /* Pods-tuduy.debug.xcconfig */,
+				0A270E1563E6FF88FA1F68E8 /* Pods-tuduy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E1390DF12013134800FA20DE = {
 			isa = PBXGroup;
 			children = (
 				E1390DFC2013134800FA20DE /* tuduy */,
 				E1390DFB2013134800FA20DE /* Products */,
+				D3CA237DAB8B6CF001330373 /* Pods */,
+				F165E1B513FAAC713F37FE32 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +118,14 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F165E1B513FAAC713F37FE32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0101C738D6158DB8E944AFEE /* Pods_tuduy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +133,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1390E0C2013134800FA20DE /* Build configuration list for PBXNativeTarget "tuduy" */;
 			buildPhases = (
+				166D685765C788E03CDD51EE /* [CP] Check Pods Manifest.lock */,
 				E1390DF62013134800FA20DE /* Sources */,
 				E1390DF72013134800FA20DE /* Frameworks */,
 				E1390DF82013134800FA20DE /* Resources */,
+				5CC68360EA15D935BCA45733 /* [CP] Embed Pods Frameworks */,
+				1F24128CE87FBD7B5EBFB69A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,6 +195,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		166D685765C788E03CDD51EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tuduy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1F24128CE87FBD7B5EBFB69A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tuduy/Pods-tuduy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CC68360EA15D935BCA45733 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-tuduy/Pods-tuduy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tuduy/Pods-tuduy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E1390DF62013134800FA20DE /* Sources */ = {
@@ -312,6 +395,7 @@
 		};
 		E1390E0D2013134800FA20DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CA0B2D0F34CA7FA4B9CC26A /* Pods-tuduy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -327,6 +411,7 @@
 		};
 		E1390E0E2013134800FA20DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A270E1563E6FF88FA1F68E8 /* Pods-tuduy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
